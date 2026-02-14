@@ -1,0 +1,40 @@
+/* Адаптація для телефонів */
+@media (max-width: 800px) {
+  /* Головна панель зверху */
+  header div[class*="AppHeader"] {
+    flex-wrap: wrap !important;
+    height: auto !important;
+    padding: 5px !important;
+  }
+
+  /* Нижня панель з кнопками (Зберегти/Опублікувати) */
+  div[class*="Toolbar"] {
+    position: fixed !important;
+    bottom: 0 !important;
+    left: 0 !important;
+    width: 100% !important;
+    z-index: 1000 !important;
+    background: #f1f3f5 !important;
+    display: flex !important;
+    justify-content: space-around !important;
+    padding: 15px 0 !important;
+    border-top: 1px solid #ccc !important;
+  }
+
+  /* Ховаємо бокове меню, щоб не заважало */
+  aside[class*="Sidebar"] {
+    display: none !important;
+  }
+
+  /* Основна область редагування */
+  main {
+    padding: 10px !important;
+    margin-bottom: 100px !important; /* Місце для кнопок знизу */
+  }
+
+  /* Поля вводу тексту */
+  div[class*="ControlContainer"] {
+    width: 100% !important;
+    margin-bottom: 15px !important;
+  }
+}
