@@ -1,91 +1,93 @@
-/* ПОВНЕ ВІДНОВЛЕННЯ ВИДИМОСТІ КОНТЕНТУ */
+/* ПОВНА ПЕРЕМОГА НАД БІЛИМ ЕКРАНОМ ТА ФІКСАЦІЯ ПАНЕЛЕЙ */
 @media (max-width: 900px) {
 
-  /* 1. БАЗА: Дозволяємо всьому бути видимим */
-  html, body {
-    overflow-x: hidden !important;
-    height: auto !important;
-    min-height: 100% !important;
-    background-color: #f4f7f9 !important;
-  }
-
-  #nc-root > div {
-    display: block !important;
-  }
-
-  /* 2. ШАПКА (ВГОРІ) */
-  header[class*="AppHeader"] {
-    position: fixed !important;
-    top: 0 !important;
-    left: 0 !important;
-    width: 100% !important;
-    height: 56px !important;
-    z-index: 1000 !important;
-    background: #fff !important;
-  }
-
-  /* 3. КОНТЕНТНА ОБЛАСТЬ (СЕРЕДИНА) */
-  /* Робимо головний блок видимим та ставимо його між шапкою і кнопками */
+  /* 1. ПРИМУСОВЕ ВІДНОБЛЕННЯ КОНТЕНТУ */
+  /* Скасовуємо будь-яке приховування головного блоку */
+  #nc-root, 
+  #nc-root > div,
   main {
     display: block !important;
     visibility: visible !important;
     opacity: 1 !important;
-    position: relative !important;
-    margin-top: 56px !important; /* Відступ під шапку */
-    margin-bottom: 80px !important; /* Відступ під кнопки */
-    padding: 15px !important;
+    min-height: 100vh !important;
     width: 100% !important;
-    min-height: 300px !important;
-    z-index: 10 !important;
   }
 
-  /* Виправляємо внутрішні контейнери, які могли стати "білими" */
-  div[class*="EditorContainer"], 
-  div[class*="ControlPaneContainer"],
-  div[class*="FormCard"] {
+  /* 2. ФІКСОВАНА ВЕРХНЯ ПАНЕЛЬ (Як у image_5b0c22.png) */
+  /* Закріплюємо шапку і під-навігацію (Contents/Media) */
+  header[class*="AppHeader"],
+  div[class*="CollectionHeader"],
+  div[class*="TopBar"] {
+    position: sticky !important;
+    top: 0 !important;
+    z-index: 2000 !important;
+    background: #fff !important;
+    width: 100% !important;
     display: block !important;
-    visibility: visible !important;
-    width: 100% !important;
-    position: relative !important;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1) !important;
   }
 
-  /* ПРИМУСОВО ХОВАЄМО ПРЕВ'Ю (воно часто перекриває все білим) */
-  div[class*="PreviewPane"] {
+  /* Виправляємо відображення кнопок Published/Contents у шапці */
+  div[class*="TopBarContainer"] {
+    display: flex !important;
+    flex-wrap: wrap !important;
+    padding: 5px !important;
+    height: auto !important;
+  }
+
+  /* 3. ВИРІШЕННЯ ПРОБЛЕМИ БІЛОГО ЕКРАНА */
+  /* Робимо редактор (поля вводу) видимим */
+  div[class*="EditorContainer"] {
+    display: block !important;
+    position: relative !important;
+    margin-top: 10px !important;
+    padding-bottom: 100px !important;
+    visibility: visible !important;
+  }
+
+  /* ПРИМУСОВО ВИДАЛЯЄМО ПРЕВ'Ю (Саме воно часто перекриває все білим) */
+  div[class*="PreviewPane"], 
+  section[class*="PreviewPane"] {
     display: none !important;
     width: 0 !important;
     height: 0 !important;
   }
 
-  /* 4. МЕНЮ (SIDEBAR) */
-  /* Робимо його частиною потоку зверху, щоб можна було обрати розділ */
+  /* 4. НИЖНЯ ПАНЕЛЬ (Toolbar) — ПРИБИВАЄМО ДО НИЗУ */
+  /* Щоб кнопки не стрибали вгору */
+  div[class*="Toolbar"] {
+    position: fixed !important;
+    bottom: 0 !important;
+    top: auto !important; /* Скасовуємо випадкове кріплення вгорі */
+    left: 0 !important;
+    width: 100% !important;
+    height: 75px !important;
+    z-index: 9999 !important;
+    background: #ffffff !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: space-around !important;
+    padding: 0 10px !important;
+    border-top: 2px solid #eee !important;
+    box-shadow: 0 -5px 15px rgba(0,0,0,0.15) !important;
+  }
+
+  /* Кнопки всередині мають бути видимими та зручними */
+  button[class*="Button"] {
+    flex: 1 !important;
+    height: 48px !important;
+    margin: 5px !important;
+    visibility: visible !important;
+  }
+
+  /* 5. МЕНЮ (SIDEBAR) */
+  /* Робимо його компактним списком зверху під шапкою */
   aside[class*="Sidebar"] {
     display: block !important;
     position: relative !important;
     width: 100% !important;
     height: auto !important;
-    margin-top: 56px !important; 
     z-index: 100 !important;
-    background: #fff !important;
-  }
-
-  /* 5. НИЖНЯ ПАНЕЛЬ (КНОПКИ) */
-  div[class*="Toolbar"] {
-    position: fixed !important;
-    bottom: 0 !important;
-    left: 0 !important;
-    width: 100% !important;
-    height: 70px !important;
-    background: #ffffff !important;
-    display: flex !important;
-    z-index: 10000 !important;
-    box-shadow: 0 -4px 15px rgba(0,0,0,0.1) !important;
-    padding: 0 10px !important;
-    border-top: 1px solid #ddd !important;
-  }
-
-  button[class*="Button"] {
-    flex: 1 !important;
-    margin: 5px !important;
-    height: 46px !important;
+    background: #f8f9fa !important;
   }
 }
