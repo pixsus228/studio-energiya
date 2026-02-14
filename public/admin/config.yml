@@ -2,7 +2,7 @@ backend:
   name: git-gateway
   branch: main
 
-media_folder: "public/images" # Тепер фото будуть у папці images
+media_folder: "public/images"
 public_folder: "/images"
 
 collections:
@@ -45,24 +45,16 @@ collections:
                 widget: "list"
                 fields:
                   - { label: "Фото", name: "cert_image", widget: "image" }
-              
-              - label: "Розклад"
-                name: "schedule"
-                widget: "list"
-                fields:
-                  - { label: "Назва напрямку", name: "title", widget: "string" }
-                  - label: "Ціни"
-                    name: "priceInfo"
-                    widget: "list"
-                    fields:
-                      - { label: "Текст ціни", name: "price_text", widget: "string" }
-                  - label: "Години"
-                    name: "details"
-                    widget: "list"
-                    fields:
-                      - { label: "Текст розкладу", name: "detail_text", widget: "string" }
+          
+          - label: "Розклад занять"
+            name: "schedule"
+            widget: "list"
+            fields:
+              - { label: "Назва напрямку", name: "title", widget: "string" }
+              - label: "Ціна", name: "price", widget: "string"
+              - label: "Години", name: "time", widget: "string"
 
-          - label: "Контакти (Viber/Telegram)"
+          - label: "Контакти"
             name: "contacts"
             widget: "object"
             fields:
