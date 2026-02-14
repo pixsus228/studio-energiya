@@ -2,8 +2,8 @@ backend:
   name: git-gateway
   branch: main
 
-media_folder: "public"
-public_folder: ""
+media_folder: "public/images" # Тепер фото будуть у папці images
+public_folder: "/images"
 
 collections:
   - name: "settings"
@@ -18,14 +18,19 @@ collections:
         fields:
           - { label: "Назва студії", name: "studioName", widget: "string" }
           - { label: "Опис студії", name: "description", widget: "text" }
+          
           - label: "Досягнення (Кубки)"
             name: "achievements"
             widget: "list"
-            field: { label: "Фото", name: "image", widget: "image" }
+            fields:
+              - { label: "Фото", name: "image", widget: "image" }
+          
           - label: "Галерея Життя студії"
             name: "gallery"
             widget: "list"
-            field: { label: "Фото", name: "image", widget: "image" }
+            fields:
+              - { label: "Фото", name: "image", widget: "image" }
+          
           - label: "Тренери"
             name: "trainers"
             widget: "list"
@@ -38,7 +43,9 @@ collections:
               - label: "Сертифікати"
                 name: "certs"
                 widget: "list"
-                field: { label: "Фото", name: "cert_image", widget: "image" }
+                fields:
+                  - { label: "Фото", name: "cert_image", widget: "image" }
+              
               - label: "Розклад"
                 name: "schedule"
                 widget: "list"
@@ -47,11 +54,14 @@ collections:
                   - label: "Ціни"
                     name: "priceInfo"
                     widget: "list"
-                    field: { label: "Текст ціни", name: "price_text", widget: "string" }
+                    fields:
+                      - { label: "Текст ціни", name: "price_text", widget: "string" }
                   - label: "Години"
                     name: "details"
                     widget: "list"
-                    field: { label: "Текст розкладу", name: "detail_text", widget: "string" }
+                    fields:
+                      - { label: "Текст розкладу", name: "detail_text", widget: "string" }
+
           - label: "Контакти (Viber/Telegram)"
             name: "contacts"
             widget: "object"
