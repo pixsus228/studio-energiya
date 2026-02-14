@@ -51,8 +51,8 @@ collections:
             widget: "list"
             fields:
               - { label: "Назва напрямку", name: "title", widget: "string" }
-              - label: "Ціна", name: "price", widget: "string"
-              - label: "Години", name: "time", widget: "string"
+              - { label: "Ціна", name: "price", widget: "string" }
+              - { label: "Години", name: "time", widget: "string" }
 
           - label: "Контакти"
             name: "contacts"
