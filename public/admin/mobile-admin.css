@@ -1,7 +1,7 @@
-/* ФІНАЛЬНА СТАБІЛІЗАЦІЯ ДЛЯ ТЕЛЕФОНУ */
+/* ОБ'ЄДНАНА СТАБІЛІЗАЦІЯ + ПЛАВАЮЧІ КНОПКИ */
 @media (max-width: 800px) {
   
-  /* 1. ПРИБИРАЄМО ГОРТАННЯ ВПРАВО ТА БІЛІ ПЛЯМИ */
+  /* 1. БАЗОВА СТАБІЛЬНІСТЬ (щоб не було білих плям та прокрутки вбік) */
   html, body {
     overflow-x: hidden !important;
     width: 100% !important;
@@ -11,7 +11,7 @@
     background-color: #f4f7f9 !important;
   }
 
-  /* 2. ФІКСУЄМО ШАПКУ (щоб не стрибала) */
+  /* 2. ШАПКА: Залишається зверху, не заважає */
   header[class*="AppHeader"] {
     position: sticky !important;
     top: 0 !important;
@@ -19,9 +19,10 @@
     height: 50px !important;
     width: 100% !important;
     background: #fff !important;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05) !important;
   }
 
-  /* 3. МЕНЮ (SIDEBAR): Робимо його статичним списком зверху */
+  /* 3. МЕНЮ (SIDEBAR): Список розділів зверху сторінки */
   aside[class*="Sidebar"] {
     display: block !important;
     position: relative !important;
@@ -34,7 +35,7 @@
     box-sizing: border-box !important;
   }
 
-  /* 4. ГОЛОВНА ОБЛАСТЬ: Виправляємо перекриття білим екраном */
+  /* 4. ГОЛОВНИЙ КОНТЕНТ: Додаємо великий відступ знизу під кнопки */
   main {
     display: block !important;
     position: relative !important;
@@ -42,47 +43,52 @@
     padding: 10px !important;
     margin: 0 !important;
     box-sizing: border-box !important;
-    overflow-y: visible !important; /* Дозволяємо нормальне гортання вниз */
+    overflow-y: visible !important;
     min-height: 500px !important;
-    z-index: 100 !important;
+    padding-bottom: 120px !important; /* Щоб кнопки не перекривали текст */
   }
 
-  /* Ховаємо превью, яке завжди все ламає */
+  /* Ховаємо превью (це рятує від помилок верстки) */
   div[class*="PreviewPane"] {
     display: none !important;
   }
 
-  /* Розтягуємо редактор на весь екран */
+  /* Поля вводу на весь екран */
   div[class*="EditorContainer"], 
   div[class*="ControlPaneContainer"] {
     width: 100% !important;
     display: block !important;
-    position: relative !important;
   }
 
-  /* 5. КНОПКИ ЗБЕРЕЖЕННЯ: "Прибиваємо" до низу екрана */
+  /* 5. НОВА ПАНЕЛЬ КНОПОК: Плаваюча капсула по центру внизу */
   div[class*="Toolbar"] {
     position: fixed !important;
-    bottom: 0 !important;
-    left: 0 !important;
-    width: 100% !important;
-    height: 70px !important;
-    z-index: 2000 !important; /* Найвищий пріоритет */
-    background: #ffffff !important;
+    bottom: 20px !important; /* Відстань від низу екрана */
+    left: 50% !important;
+    transform: translateX(-50%) !important; /* Рівно по центру */
+    width: 92% !important;
+    max-width: 450px !important;
+    height: 65px !important;
+    background: rgba(255, 255, 255, 0.9) !important;
+    backdrop-filter: blur(10px) !important; /* Ефект скла */
+    border-radius: 35px !important;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.15) !important;
     display: flex !important;
     align-items: center !important;
     justify-content: space-around !important;
-    box-shadow: 0 -5px 15px rgba(0,0,0,0.1) !important;
-    padding: 0 10px !important;
-    box-sizing: border-box !important;
+    padding: 0 15px !important;
+    z-index: 10000 !important;
+    border: 1px solid rgba(255,255,255,0.3) !important;
   }
 
-  /* Кнопки мають бути великими та видимими */
+  /* Кнопки всередині капсули */
   button[class*="Button"] {
-    height: 45px !important;
+    height: 44px !important;
     flex: 1 !important;
     margin: 0 5px !important;
+    border-radius: 22px !important;
     font-size: 14px !important;
+    font-weight: 600 !important;
     visibility: visible !important;
     opacity: 1 !important;
   }
