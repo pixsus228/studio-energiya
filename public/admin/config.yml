@@ -1,107 +1,65 @@
-/* УНІВЕРСАЛЬНА АДАПТАЦІЯ: ПК та МОБІЛЬНІ */
+backend:
+  name: git-gateway
+  branch: main
 
-/* 1. ПРАВИЛА ТІЛЬКИ ДЛЯ МОБІЛЬНИХ (екран менше 800px) */
-@media (max-width: 800px) {
-  
-  /* Заборона прокрутки вправо на рівні всієї сторінки */
-  html, body {
-    overflow-x: hidden !important;
-    position: relative;
-    width: 100% !important;
-    background-color: #f4f7f9 !important;
-  }
+media_folder: "public"
+public_folder: ""
 
-  /* ШАПКА: робимо вузькою та фіксованою */
-  header[class*="AppHeader"] {
-    height: 56px !important;
-    padding: 0 10px !important;
-    position: sticky !important;
-    top: 0 !important;
-    z-index: 1001 !important;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1) !important;
-  }
+collections:
+  - name: "settings"
+    label: "Налаштування сайту"
+    delete: false
+    editor:
+      preview: false
+    files:
+      - file: "src/data.json"
+        label: "Усі дані та Розклад"
+        name: "data"
+        fields:
+          - { label: "Назва студії", name: "studioName", widget: "string" }
+          - { label: "Опис студії", name: "description", widget: "text" }
+          
+          - label: "Досягнення (Кубки)"
+            name: "achievements"
+            widget: "list"
+            field: { label: "Фото кубка", name: "image", widget: "image" }
+          
+          - label: "Галерея Життя студії"
+            name: "gallery"
+            widget: "list"
+            field: { label: "Фото галереї", name: "image", widget: "image" }
+          
+          - label: "Тренери"
+            name: "trainers"
+            widget: "list"
+            fields:
+              - { label: "ID (латиницею)", name: "id", widget: "string" }
+              - { label: "ПІБ", name: "name", widget: "string" }
+              - { label: "Роль/Посада", name: "role", widget: "string" }
+              - { label: "Фото тренера", name: "photo", widget: "image" }
+              - { label: "Instagram URL", name: "instagram", widget: "string", required: false }
+              - label: "Сертифікати"
+                name: "certs"
+                widget: "list"
+                field: { label: "Фото сертифіката", name: "cert_image", widget: "image" }
+              
+              - label: "Розклад тренера"
+                name: "schedule"
+                widget: "list"
+                fields:
+                  - { label: "Назва напрямку", name: "title", widget: "string" }
+                  - label: "Ціни (список рядків)"
+                    name: "priceInfo"
+                    widget: "list"
+                    field: { label: "Текст ціни", name: "price_text", widget: "string" }
+                  - label: "Години/Деталі (список рядків)"
+                    name: "details"
+                    widget: "list"
+                    field: { label: "Текст розкладу", name: "detail_text", widget: "string" }
 
-  /* МЕНЮ (Sidebar): Виставляємо зверху списком, щоб не ховати розділи */
-  aside[class*="Sidebar"] {
-    display: block !important;
-    width: 100% !important;
-    position: relative !important;
-    height: auto !important;
-    padding: 10px !important;
-    background: #fff !important;
-    border-bottom: 1px solid #ddd !important;
-    box-sizing: border-box !important;
-  }
-
-  /* КОНТЕНТ: Робимо на всю ширину */
-  main {
-    width: 100% !important;
-    padding: 10px !important;
-    margin: 0 !important;
-    box-sizing: border-box !important;
-    display: block !important;
-    min-height: calc(100vh - 150px) !important;
-    padding-bottom: 100px !important; /* Відступ під кнопки знизу */
-  }
-
-  /* ПРИХОВУЄМО ПРЕВ'Ю: Саме воно розтягує екран вправо на телефонах */
-  div[class*="PreviewPane"] {
-    display: none !important;
-  }
-
-  /* РЕДАКТОР: Розтягуємо поля на весь екран */
-  div[class*="EditorContainer"], 
-  div[class*="ControlPaneContainer"],
-  div[class*="FormCard"] {
-    width: 100% !important;
-    padding: 0 !important;
-    margin: 0 !important;
-    display: block !important;
-  }
-
-  /* ПОЛЯ ВВОДУ: Зручні для пальців */
-  div[class*="ControlContainer"] {
-    margin-bottom: 15px !important;
-    padding: 12px !important;
-    background: #fff !important;
-    border-radius: 8px !important;
-    border: 1px solid #e1e4e8 !important;
-    box-sizing: border-box !important;
-  }
-
-  input, textarea, select {
-    font-size: 16px !important; /* Запобігає авто-зуму на iPhone */
-    width: 100% !important;
-    box-sizing: border-box !important;
-  }
-
-  /* НИЖНЯ ПАНЕЛЬ (Кнопки): Завжди знизу і поверх усього */
-  div[class*="Toolbar"] {
-    position: fixed !important;
-    bottom: 0 !important;
-    left: 0 !important;
-    width: 100% !important;
-    z-index: 9999 !important;
-    background: #ffffff !important;
-    padding: 12px 5px !important;
-    display: flex !important;
-    justify-content: space-around !important;
-    box-shadow: 0 -4px 12px rgba(0,0,0,0.15) !important;
-    box-sizing: border-box !important;
-  }
-
-  /* КНОПКИ: великі, щоб легко було натиснути */
-  button[class*="Button"] {
-    flex: 1 !important;
-    margin: 0 5px !important;
-    height: 48px !important;
-    font-weight: 600 !important;
-    border-radius: 8px !important;
-    font-size: 14px !important;
-  }
-}
-
-/* 2. ПРАВИЛА ДЛЯ ПК (екран більше 801px) */
-@media (min-width: 801px) {
-  /* Тут ми нічого не змінюємо, щоб залишився стандартний вигляд */
-}
+          - label: "Контакти"
+            name: "contacts"
+            widget: "object"
+            fields:
+              - { label: "Viber Link", name: "viber", widget: "string" }
+              - { label: "Telegram Link", name: "telegram", widget: "string" }
