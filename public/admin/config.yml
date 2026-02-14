@@ -2,8 +2,9 @@ backend:
   name: git-gateway
   branch: main
 
-media_folder: "public/images"
-public_folder: "/images"
+# Фото лежать прямо в папці public, як у вашому JSON
+media_folder: "public"
+public_folder: ""
 
 collections:
   - name: "settings"
@@ -13,7 +14,7 @@ collections:
       preview: false
     files:
       - file: "src/data.json"
-        label: "Основні дані та Розклад"
+        label: "Усі дані та Розклад"
         name: "data"
         fields:
           - { label: "Назва студії", name: "studioName", widget: "string" }
@@ -22,14 +23,12 @@ collections:
           - label: "Досягнення (Кубки)"
             name: "achievements"
             widget: "list"
-            fields:
-              - { label: "Фото", name: "image", widget: "image" }
+            field: { label: "Фото кубка", widget: "image" }
           
           - label: "Галерея Життя студії"
             name: "gallery"
             widget: "list"
-            fields:
-              - { label: "Фото", name: "image", widget: "image" }
+            field: { label: "Фото галереї", widget: "image" }
           
           - label: "Тренери"
             name: "trainers"
@@ -43,16 +42,21 @@ collections:
               - label: "Сертифікати"
                 name: "certs"
                 widget: "list"
+                field: { label: "Фото сертифіката", widget: "image" }
+              
+              - label: "Розклад тренера"
+                name: "schedule"
+                widget: "list"
                 fields:
-                  - { label: "Фото", name: "cert_image", widget: "image" }
-          
-          - label: "Розклад занять"
-            name: "schedule"
-            widget: "list"
-            fields:
-              - { label: "Назва напрямку", name: "title", widget: "string" }
-              - { label: "Ціна", name: "price", widget: "string" }
-              - { label: "Години", name: "time", widget: "string" }
+                  - { label: "Назва напрямку", name: "title", widget: "string" }
+                  - label: "Ціни (список рядків)"
+                    name: "priceInfo"
+                    widget: "list"
+                    field: { label: "Текст ціни", widget: "string" }
+                  - label: "Години/Деталі (список рядків)"
+                    name: "details"
+                    widget: "list"
+                    field: { label: "Текст розкладу", widget: "string" }
 
           - label: "Контакти"
             name: "contacts"
