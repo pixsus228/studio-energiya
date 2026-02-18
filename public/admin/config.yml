@@ -1,9 +1,10 @@
 backend:
   name: git-gateway
   branch: main
+  repo: pixsus228/studio-energiya
 
-media_folder: "public"
-public_folder: ""
+media_folder: "public/assets/img"
+public_folder: "/assets/img"
 
 collections:
   - name: "settings"
