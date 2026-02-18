@@ -6,10 +6,26 @@
     <meta name="theme-color" content="#000000" />
     <meta name="apple-mobile-web-app-capable" content="yes" />
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
-    <title>Studio Energiya</title>
+    
+    <title>Студія танцю Енергія | Ромни</title>
+    <meta name="description" content="Студія танцю Енергія в Ромнах — навчання сучасним танцям для дітей та дорослих. Професійні тренери, розклад занять та запис онлайн.">
+
+    <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
   </head>
   <body>
     <div id="root"></div>
     <script type="module" src="/src/index.jsx"></script>
+
+    <script>
+      if (window.netlifyIdentity) {
+        window.netlifyIdentity.on("init", user => {
+          if (!user) {
+            window.netlifyIdentity.on("login", () => {
+              document.location.href = "/admin/";
+            });
+          }
+        });
+      }
+    </script>
   </body>
 </html>
