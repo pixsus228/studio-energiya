@@ -1,11 +1,32 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import App from './App';
-import './App.css'; // Підключаємо ваші стилі
+<!DOCTYPE html>
+<html lang="uk">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0" />
+    <meta name="theme-color" content="#000000" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    
+    <title>Студія танцю Енергія | Ромни</title>
+    <meta name="description" content="Студія танцю Енергія в Ромнах — професійне навчання танцям для дітей та дорослих. Сучасні зали, досвідчені тренери та підготовка до змагань.">
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
-root.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>
-);
+    <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+  </head>
+  <body>
+    <div id="root"></div>
+    
+    <script type="module" src="/src/index.jsx"></script>
+
+    <script>
+      if (window.netlifyIdentity) {
+        window.netlifyIdentity.on("init", user => {
+          if (!user) {
+            window.netlifyIdentity.on("login", () => {
+              document.location.href = "/admin/";
+            });
+          }
+        });
+      }
+    </script>
+  </body>
+</html>
