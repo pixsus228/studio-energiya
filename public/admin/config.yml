@@ -1,66 +1,81 @@
 backend:
   name: git-gateway
   branch: main
-  repo: pixsus228/studio-energiya
+local_backend: true
+locale: uk
 
-media_folder: "public/assets/img"
-public_folder: "/assets/img"
+media_folder: "public/images"
+public_folder: "/images"
 
 collections:
-  - name: "settings"
-    label: "Налаштування сайту"
-    delete: false
-    editor:
-      preview: false
+  - name: "content"
+    label: "Зміст сайту"
     files:
       - file: "src/data.json"
-        label: "Усі дані та Розклад"
+        label: "Головна сторінка та Налаштування"
         name: "data"
         fields:
-          - { label: "Назва студії", name: "studioName", widget: "string" }
-          - { label: "Опис студії", name: "description", widget: "text" }
-          
-          - label: "Досягнення (Кубки)"
-            name: "achievements"
-            widget: "list"
-            field: { label: "Фото кубка", name: "image", widget: "image" }
-          
-          - label: "Галерея Життя студії"
-            name: "gallery"
-            widget: "list"
-            field: { label: "Фото галереї", name: "image", widget: "image" }
-          
-          - label: "Тренери"
-            name: "trainers"
-            widget: "list"
-            fields:
-              - { label: "ID (латиницею)", name: "id", widget: "string" }
-              - { label: "ПІБ", name: "name", widget: "string" }
-              - { label: "Роль/Посада", name: "role", widget: "string" }
-              - { label: "Фото тренера", name: "photo", widget: "image" }
-              - { label: "Instagram URL", name: "instagram", widget: "string", required: false }
-              - label: "Сертифікати"
-                name: "certs"
-                widget: "list"
-                field: { label: "Фото сертифіката", name: "cert_image", widget: "image" }
-              
-              - label: "Розклад тренера"
-                name: "schedule"
-                widget: "list"
-                fields:
-                  - { label: "Назва напрямку", name: "title", widget: "string" }
-                  - label: "Ціни (список рядків)"
-                    name: "priceInfo"
-                    widget: "list"
-                    field: { label: "Текст ціни", name: "price_text", widget: "string" }
-                  - label: "Години/Деталі (список рядків)"
-                    name: "details"
-                    widget: "list"
-                    field: { label: "Текст розкладу", name: "detail_text", widget: "string" }
-
-          - label: "Контакти"
-            name: "contacts"
+          - label: "📍 Налаштування Мапи"
+            name: "location"
             widget: "object"
             fields:
-              - { label: "Viber Link", name: "viber", widget: "string" }
-              - { label: "Telegram Link", name: "telegram", widget: "string" }
+              - { label: "Текст на кнопці", name: "addressText", widget: "string", hint: "Наприклад: бул. Шевченка, 67-Б" }
+              - { label: "Посилання на Google Maps", name: "mapLink", widget: "string" }
+
+          - { label: "📝 Опис студії", name: "description", widget: "text" }
+
+          - label: "👥 Наші Викладачі"
+            name: "trainers"
+            widget: "list"
+            summary: "{{name}}"
+            fields:
+              - { label: "ID (латиниця)", name: "id", widget: "string" }
+              - { label: "Прізвище та Ім'я", name: "name", widget: "string" }
+              - { label: "Спеціалізація", name: "role", widget: "string" }
+              - { label: "Головне фото", name: "photo", widget: "image" }
+              - { label: "Instagram", name: "instagram", widget: "string", required: false }
+
+              - label: "📜 Сертифікати"
+                name: "certs"
+                widget: "list"
+                label_singular: "сертифікат"
+                fields:
+                  - { label: "Завантажити фото", name: "cert_item", widget: "image" }
+
+              - label: "🎥 Відео"
+                name: "videos"
+                widget: "list"
+                label_singular: "відео"
+                required: false
+                fields:
+                  - { label: "Завантажити MP4", name: "video_item", widget: "file" }
+
+              - label: "🗓️ Напрямки та Розклад"
+                name: "schedule"
+                widget: "list"
+                summary: "{{title}}"
+                fields:
+                  - { label: "Назва напрямку", name: "title", widget: "string" }
+                  - label: "Час занять"
+                    name: "details"
+                    widget: "list"
+                    fields:
+                      - { label: "Запис", name: "detail_line", widget: "string" }
+                  - label: "💰 Вартість"
+                    name: "priceInfo"
+                    widget: "list"
+                    required: false
+                    fields:
+                      - { label: "Ціна", name: "price_line", widget: "string" }
+
+          - label: "🏆 Кубки"
+            name: "achievements"
+            widget: "list"
+            fields:
+              - { label: "Фото", name: "cup_item", widget: "image" }
+
+          - label: "📸 Фото Студії"
+            name: "gallery"
+            widget: "list"
+            fields:
+              - { label: "Фото", name: "gallery_item", widget: "image" }

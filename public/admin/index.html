@@ -1,32 +1,51 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="uk">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0" />
-    <meta name="theme-color" content="#000000" />
-    <meta name="apple-mobile-web-app-capable" content="yes" />
-    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
-    
-    <title>Студія танцю Енергія | Ромни</title>
-    <meta name="description" content="Студія танцю Енергія в Ромнах — професійне навчання танцям для дітей та дорослих. Сучасні зали, досвідчені тренери та підготовка до змагань.">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
-  </head>
-  <body>
-    <div id="root"></div>
-    
-    <script type="module" src="/src/index.jsx"></script>
+  <meta http-equiv="Content-Security-Policy" content="default-src * 'unsafe-inline' 'unsafe-eval' data: blob:; connect-src * data: blob:; img-src * data: blob:; style-src * 'unsafe-inline';">
 
-    <script>
-      if (window.netlifyIdentity) {
-        window.netlifyIdentity.on("init", user => {
-          if (!user) {
-            window.netlifyIdentity.on("login", () => {
-              document.location.href = "/admin/";
-            });
-          }
-        });
-      }
-    </script>
-  </body>
+  <link rel="icon" href="data:,">
+  <title>Панель керування | Енергія</title>
+
+  <link rel="stylesheet" href="mobile-admin.css">
+
+  <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+
+  <style>
+    .exit-button {
+      position: fixed; top: 10px; right: 20px; z-index: 9999;
+      background-color: #2ecc71; color: white; text-decoration: none;
+      padding: 10px 18px; border-radius: 8px; font-family: sans-serif;
+      font-size: 14px; font-weight: bold; box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+      transition: all 0.2s ease-in-out; display: flex; align-items: center; gap: 8px;
+    }
+    .exit-button:hover { background-color: #27ae60; transform: translateY(-2px); }
+    .exit-button svg { width: 18px; height: 18px; }
+    @media (max-width: 600px) { .exit-button span { display: none; } }
+  </style>
+</head>
+<body>
+  <a href="/" class="exit-button">
+    <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"></path>
+    </svg>
+    <span>На головну сайту</span>
+  </a>
+
+  <script src="https://unpkg.com/decap-cms@^3.10.1/dist/decap-cms.js"></script>
+
+  <script>
+    if (window.netlifyIdentity) {
+      window.netlifyIdentity.on("init", user => {
+        if (!user) {
+          window.netlifyIdentity.on("login", () => {
+            document.location.href = "/admin/";
+          });
+        }
+      });
+    }
+  </script>
+</body>
 </html>
