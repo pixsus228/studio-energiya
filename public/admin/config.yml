@@ -1,6 +1,8 @@
 backend:
   name: git-gateway
   branch: main
+site_url: https://energiya-romny.com.ua
+display_url: https://energiya-romny.com.ua
 local_backend: true
 locale: uk
 
