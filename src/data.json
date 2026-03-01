@@ -1,138 +1,75 @@
 {
   "location": {
     "addressText": "бульвар Шевченка, 67-Б, Ромни",
-    "mapLink": "https://maps.app.goo.gl/xid5Aih2DrpjWAHJ7"
+    "mapLink": "https://www.google.com/maps/search/?api=1&query=Студія+танцю+Енергія+Ромни+бульвар+Шевченка+67-Б"
   },
   "description": "Професійна студія енергії та розвитку.",
   "achievements": [
-    {
-      "cup_item": "/images/cup_1.jpg"
-    },
-    {
-      "cup_item": "/images/cup_2.jpg"
-    },
-    {
-      "cup_item": "/images/cup_3.jpg"
-    }
+    { "cup_item": "/images/cup_1.jpg" },
+    { "cup_item": "/images/cup_2.jpg" },
+    { "cup_item": "/images/cup_3.jpg" }
   ],
   "gallery": [
-    {
-      "gallery_item": "/images/studio_1.jpg"
-    },
-    {
-      "gallery_item": "/images/studio_2.jpg"
-    },
-    {
-      "gallery_item": "/images/viber_photo_1.jpg"
-    },
-    {
-      "gallery_item": "/images/studio_4.jpg"
-    },
-    {
-      "gallery_item": "/images/studio_5.jpg"
-    },
-    {
-      "gallery_item": "/images/studio_7.jpg"
-    },
-    {
-      "gallery_item": "/images/studio_8.jpg"
-    },
-    {
-      "gallery_item": "/images/studio_9.jpg"
-    },
-    {
-      "gallery_item": "/images/studio_10.jpg"
-    },
-    {
-      "gallery_item": "/images/studio_11.jpg"
-    },
-    {
-      "gallery_item": "/images/studio_12.jpg"
-    },
-    {
-      "gallery_item": "/images/studio_13.jpg"
-    },
-    {
-      "gallery_item": "/images/studio_14.jpg"
-    },
-    {
-      "gallery_item": "/images/studio_15.jpg"
-    },
-    {
-      "gallery_item": "/images/photo_2026-02-10_10-51-04.jpg"
-    }
+    { "gallery_item": "/images/studio_1.jpg" },
+    { "gallery_item": "/images/studio_2.jpg" },
+    { "gallery_item": "/images/viber_photo_1.jpg" },
+    { "gallery_item": "/images/studio_4.jpg" },
+    { "gallery_item": "/images/studio_5.jpg" },
+    { "gallery_item": "/images/studio_7.jpg" },
+    { "gallery_item": "/images/studio_8.jpg" },
+    { "gallery_item": "/images/studio_9.jpg" },
+    { "gallery_item": "/images/studio_10.jpg" },
+    { "gallery_item": "/images/studio_11.jpg" },
+    { "gallery_item": "/images/studio_12.jpg" },
+    { "gallery_item": "/images/studio_13.jpg" },
+    { "gallery_item": "/images/studio_14.jpg" },
+    { "gallery_item": "/images/studio_15.jpg" },
+    { "gallery_item": "/images/photo_2026-02-10_10-51-04.jpg" }
   ],
   "trainers": [
     {
       "id": "ludmila",
       "name": "Яременко Людмила",
-      "role": "Головний тренер | Pilates / Fly Stretching / КМС зі спортивної гімнастики",
+      "role": "Засновниця студії, тренер | КМС зі спортивної гімнастики",
       "photo": "/images/ludmila.jpg",
       "instagram": "https://www.instagram.com/studio_energiya",
       "certs": [
-        {
-          "cert_item": "/images/cert_ludmila_1.jpg"
-        },
-        {
-          "cert_item": "/images/cert_ludmila_2.jpg"
-        },
-        {
-          "cert_item": "/images/cert_ludmila_3.jpg"
-        },
-        {
-          "cert_item": "/images/cert_ludmila_4.jpg"
-        },
-        {
-          "cert_item": "/images/cert_ludmila_5.jpg"
-        },
-        {
-          "cert_item": "/images/l6.png"
-        }
+        { "cert_item": "/images/cert_ludmila_1.jpg" },
+        { "cert_item": "/images/cert_ludmila_2.jpg" },
+        { "cert_item": "/images/cert_ludmila_3.jpg" },
+        { "cert_item": "/images/cert_ludmila_4.jpg" },
+        { "cert_item": "/images/cert_ludmila_5.jpg" }
       ],
       "videos": [],
       "schedule": [
         {
           "title": "Сучасна хореографія",
-          "priceInfo": [
-            {
-              "price_line": "💰 600 місяць"
-            }
-          ],
+          "priceInfo": [{ "price_line": "💰 600 місяць" }],
           "details": [
-            {
-              "detail_line": "Пн, Ср, Пт: 14:15 (6-7 років)"
-            },
-            {
-              "detail_line": "Пн, Ср, Пт: 16:00 (10-12 років)"
-            },
-            {
-              "detail_line": "Вт, Чт: 14:30 (8-10 років)"
-            },
-            {
-              "detail_line": "Вт, Чт: 16:00 (13-16 років)"
-            },
-            {
-              "detail_line": "Сб: 11:30 (13-16 років), 13:00 (8-10 років)"
-            }
+            { "detail_line": "Пн, Ср, Пт: 14:15 (6-7 років)" },
+            { "detail_line": "Пн, Ср, Пт: 16:00 (10-12 років)" },
+            { "detail_line": "Вт, Чт: 14:30 (8-10 років)" },
+            { "detail_line": "Вт, Чт: 16:00 (13-16 років)" },
+            { "detail_line": "Сб: 11:30 (13-16 років), 13:00 (8-10 років)" }
           ]
         },
         {
           "title": "Пілатес",
           "priceInfo": [
-            {
-              "price_line": "💰 120 грн (разове)"
-            },
-            {
-              "price_line": "🎫 1200 грн (12 занять)"
-            }
+            { "price_line": "💰 120 грн (разове)" },
+            { "price_line": "🎫 1200 грн (12 занять)" }
           ],
           "details": [
-            {
-              "detail_line": "Пн, Ср, Пт: 8:30, 18:10, 19:20"
-            },
-            {
-              "detail_line": "Вт, Чт: 8:30"
-            }
+            { "detail_line": "Пн, Ср, Пт: 8:30, 18:10, 19:20" },
+            { "detail_line": "Вт, Чт: 8:30" }
+          ]
+        },
+        {
+          "title": "Fly Stretching",
+          "priceInfo": [{ "price_line": "💰 Уточнюйте у тренера" }],
+          "details": [
+            { "detail_line": "Заняття в гамаках для гнучкості" },
+            { "detail_line": "Запис за телефоном або в Instagram" }
           ]
         }
       ]
@@ -144,32 +81,18 @@
       "photo": "/images/anastasia_main.jpg",
       "instagram": "https://www.instagram.com/slavkovna.gym",
       "certs": [
-        {
-          "cert_item": "/images/cert_anastasia_1.jpg"
-        },
-        {
-          "cert_item": "/images/cert_anastasia_2.jpg"
-        }
+        { "cert_item": "/images/cert_anastasia_1.jpg" },
+        { "cert_item": "/images/cert_anastasia_2.jpg" }
       ],
       "videos": [],
       "schedule": [
         {
           "title": "Stretching (Розтяжка)",
-          "priceInfo": [
-            {
-              "price_line": "💰 Разове тренування: 200 грн"
-            }
-          ],
+          "priceInfo": [{ "price_line": "💰 Разове тренування: 200 грн" }],
           "details": [
-            {
-              "detail_line": "Пн, Ср, Пт: 08:30-09:30 (15+ років)"
-            },
-            {
-              "detail_line": "Вт, Чт: 18:30-19:10 (15+ років)"
-            },
-            {
-              "detail_line": "Вт, Чт: 19:20-20:20 (15+ років)"
-            }
+            { "detail_line": "Пн, Ср, Пт: 08:30-09:30 (15+ років)" },
+            { "detail_line": "Вт, Чт: 18:30-19:10 (15+ років)" },
+            { "detail_line": "Вт, Чт: 19:20-20:20 (15+ років)" }
           ]
         }
       ]
@@ -185,23 +108,13 @@
         {
           "title": "Pole Dance",
           "priceInfo": [
-            {
-              "price_line": "🔸 Разове: 300 грн"
-            },
-            {
-              "price_line": "🔸 Абонемент (4 зан): 900 грн"
-            },
-            {
-              "price_line": "🔸 Абонемент (8 зан): 1550 грн"
-            }
+            { "price_line": "🔸 Разове: 300 грн" },
+            { "price_line": "🔸 Абонемент (4 зан): 900 грн" },
+            { "price_line": "🔸 Абонемент (8 зан): 1550 грн" }
           ],
           "details": [
-            {
-              "detail_line": "Пн, Ср, Пт: 10:30-11:30"
-            },
-            {
-              "detail_line": "Пн, Ср, Пт: 19:20-20:20"
-            }
+            { "detail_line": "Пн, Ср, Пт: 10:30-11:30" },
+            { "detail_line": "Пн, Ср, Пт: 19:20-20:20" }
           ]
         }
       ]

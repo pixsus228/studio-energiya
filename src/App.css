@@ -79,15 +79,32 @@ body { background: #050505; color: white; font-family: 'Segoe UI', sans-serif; o
   0% { border-color: rgba(157, 80, 187, 0.3); box-shadow: 0 0 10px var(--deep-purple); }
   100% { border-color: #f8bbd0; box-shadow: 0 0 40px var(--neon-purple); }
 }
-.map-btn-neon, .lesson-glass-btn, .insta-btn-glass {
+
+.insta-btn-glass, .lesson-glass-btn {
   animation: purpleBreath 3s infinite alternate;
   border: 2px solid var(--neon-purple); border-radius: 50px;
   color: white; font-weight: bold; transition: 0.4s;
   background: transparent !important; backdrop-filter: blur(4px);
 }
+
 .insta-btn-glass { display: inline-flex; align-items: center; gap: 12px; padding: 12px 35px; margin: 20px 0 40px; }
+
+/* Мій виправлений блок для кнопки карти: тепер вона не розтягує мобільну верстку */
+.map-btn-neon {
+  animation: purpleBreath 3s infinite alternate;
+  border: 2px solid var(--neon-purple); border-radius: 50px;
+  color: white; font-weight: bold; transition: 0.4s;
+  background: transparent !important; backdrop-filter: blur(4px);
+  display: inline-block;
+  width: auto;
+  max-width: 90%;
+  margin: 20px auto;
+  padding: 15px 25px;
+  line-height: 1.2;
+  word-wrap: break-word;
+}
+
 .map-wrapper { margin: 40px 0 60px; }
-.map-btn-neon { padding: 18px 50px; }
 
 /* ТРЕНЕРИ (СІТКА) */
 .trainers-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 40px; width: 100%; margin-bottom: 60px; }
@@ -124,3 +141,16 @@ body { background: #050505; color: white; font-family: 'Segoe UI', sans-serif; o
 /* ЛАЙТБОКС */
 .lightbox-overlay { position: fixed !important; top: 0; left: 0; width: 100vw; height: 100vh; background: rgba(0,0,0,0.98); backdrop-filter: blur(15px); display: flex; align-items: center; justify-content: center; z-index: 9999; }
 .lightbox-img { max-width: 85vw; max-height: 80vh; border: 2px solid var(--neon-purple); border-radius: 15px; box-shadow: 0 0 50px var(--neon-purple); }
+
+/* Мій доданий блок для підсвітки лого на телефонах */
+@media (max-width: 768px) {
+    .logo-oval-container {
+        box-shadow: 0 0 20px var(--neon-purple);
+        animation: logoGlowMobile 3s infinite alternate ease-in-out;
+    }
+}
+
+@keyframes logoGlowMobile {
+    from { box-shadow: 0 0 10px var(--neon-purple); transform: scale(1); }
+    to { box-shadow: 0 0 25px var(--neon-purple); transform: scale(1.05); }
+}
