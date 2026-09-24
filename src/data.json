@@ -133,18 +133,28 @@
           ]
         },
         {
-          "title": "Fly Stretching/Fly acro",
-          "priceInfo": [
-            {
-              "price_line": "разове тренування💰 200грн "
-            }
-          ],
+          "title": "Pole dance ( діти 12-15 років)",
           "details": [
             {
-              "detail_line": "Заняття в гамаках для гнучкості та повітряної акробатики"
-            },
+              "detail_line": "вівторок четвер 16.15, субота 11.00"
+            }
+          ],
+          "priceInfo": [
             {
-              "detail_line": "Запис  в Instagram"
+              "price_line": "разова 200 грн"
+            }
+          ]
+        },
+        {
+          "title": "Pole dance ( дорослі 20+)",
+          "details": [
+            {
+              "detail_line": "вівторок четвер 18.00"
+            }
+          ],
+          "priceInfo": [
+            {
+              "price_line": "200 грн"
             }
           ]
         }
@@ -221,12 +231,15 @@
               "price_line": "🔸 Разове: 300 грн"
             },
             {
-              "price_line": "🔸 Абонемент (4 зан): 900 грн"
+              "price_line": "🔸 Абонемент (4 зан): 1000 грн"
             }
           ],
           "details": [
             {
               "detail_line": "Пн, Ср, Пт: 19:20-20:20"
+            },
+            {
+              "detail_line": "пн, ср, пт : 11.00"
             }
           ]
         }
